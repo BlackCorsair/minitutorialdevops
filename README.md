@@ -222,10 +222,4 @@ services:
 Sí, hay examen de lo que acabo de contar, hay que tener 5/7 para aprobar.
 
 **Preguntas**
-1. Qué es un contenedor?
-2. Para qué viene bien utilizar docker?
-3. Para qué sirve Ansible?
-4. Qué es un rol de Ansible? Y un playbook?
-5. Qué ocurre cuando ejecutas _git clone \<repo\>_?
-6. Cómo se cambia de rama en git: _git branch \<rama\>_ o _git checkout \<rama\>_?
-7. Edimburgo de qué pais es capital?
+Para el final de clase ;)
