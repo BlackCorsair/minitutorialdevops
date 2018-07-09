@@ -63,7 +63,7 @@ slave	ansible_connection=ssh	ansible_host=192.168.56.102	ansible_user=user
 ```
 #### Modulos
 Hay que saber cómo buscarlos, no hay que trabajar el doble:
-_"[Module Index — Ansible Documentation](https://docs.ansible.com/ansible/la_test/modules/modules_by_category.html)"_
+_"[Module Index — Ansible Documentation](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html)"_
 * apt
 * yum
 * file
