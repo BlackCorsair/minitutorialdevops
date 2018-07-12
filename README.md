@@ -88,7 +88,7 @@ _"Los playbooks pueden declarar configuraciones, pero también pueden organizar 
 Ejemplo de un playbook:
 ```
 ---
-# this playbook install docker on centOS, written in the YAML horror D:
+# this playbook installs docker on a centOS machine
 - hosts: learning
   become: true
   tasks:
@@ -107,7 +107,7 @@ Ejemplo de un playbook:
       - docker-selinux
       - docker-engine-selinux
       - docker-engine
-
+    when: ansible_pkg_mgr == 'yum'
   - name: Installs required packages to add the docker-ce repository
     yum:
       name: "{{ item }}"
@@ -116,6 +116,7 @@ Ejemplo de un playbook:
       - yum-utils
       - device-mapper-persistent-data
       - lvm2
+    when: ansible_pkg_mgr == 'yum'
 
   - name: Enables the docker-ce repository
     yum_repository:
@@ -123,11 +124,14 @@ Ejemplo de un playbook:
       description: docker-ce official repository
       baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
       enabled: yes
+    when: ansible_pkg_mgr == 'yum'
 
   - name: Installs docker-ce
     yum:
       name: docker-ce
-  state: latest
+      state: latest
+      disable_gpg_check: yes
+    when: ansible_pkg_mgr == 'yum'
 ```
 #### Ejecución Playbooks y pruebas
 ```
